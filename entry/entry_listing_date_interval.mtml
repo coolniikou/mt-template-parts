@@ -1,0 +1,54 @@
+<mt:IfArchiveTypeEnabled archive_type="Monthly">
+    <mt:ArchiveList archive_type="Yearly">
+        <mt:ArchiveListHeader>
+        <section class="span4 archive-list">
+                <header class="section-header">
+                    <h3 class="btn archive-btn section-title" data-toggle="collapse" data-target=".archive-date-interval-content"><$mt:ArchiveTypeLabel$> アーカイブ</h3>
+                    <p class="entry-description">
+                    </p><!--/entry-description -->
+                </header><!--/section-header -->
+                <div class="section-content archive-date-interval-content">
+        </mt:ArchiveListHeader>
+                    <section class="yearly">
+                        <header class="section-header">
+                            <h4 class="section-title"><mt:ArchiveTitle></h4>
+                        </header><!--/yearly section-header -->
+                        <div class="section-content">
+                        <mt:ArchiveTitle setvar="thisyear" />
+                        <mt:SetVar name="match" value="1">
+                        <mt:Entries sort_order="ascend">
+                        <mt:SetVarBlock name="thisMonth"><mt:EntryDate format="%B" /></mt:SetVarBlock>
+                        <mt:If name="match" eq="1">
+                            <section class="monthly">
+                                <header class="sction-header">
+                                    <h5 class="section-title"><mt:GetVar name="thisMonth" />月</h5>
+                                </header><!--/sction-header -->
+                                <div class="section-content">
+                                    <ul class="nav unstyled">
+                        </mt:If>
+                                <li><a href="<mt:EntryPermalink />"><mt:EntryTitle encode_html="1" /></a>（<mt:EntryDate format="%B %e"/>）</li>
+                                <mt:EntryNext><mt:SetVarBlock name="entryMonth"><mt:EntryDate format="%B" /></mt:SetVarBlock></mt:EntryNext>
+                        <mt:If name="entryMonth" ne="$thisMonth">
+                                    </ul>
+                                </div><!--/monthly section-content -->
+                            </section><!--/monthly -->
+                            <mt:SetVar name="match" value="1">
+                        <mt:Else>
+                            <mt:SetVar name="match" value="0">
+                        </mt:If>  
+                        <mt:EntriesFooter>
+                        <mt:If name="match" eq="0">
+                                    </ul>
+                                </div><!--/monthly section-content -->
+                            </section><!--/monthly -->
+                        </mt:If>
+                        </mt:EntriesFooter>
+                        </mt:Entries>
+                        </div><!--/yearly section-content -->
+                   </section> <!--/yearly -->
+        <mt:ArchiveListFooter>
+                </div><!--/section-content -->
+        </section><!--/archive-list -->
+        </mt:ArchiveListFooter>
+    </mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>

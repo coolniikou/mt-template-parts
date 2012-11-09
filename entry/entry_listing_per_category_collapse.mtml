@@ -1,0 +1,35 @@
+<mt:IfArchiveTypeEnabled archive_type="Category">
+<section class="span5 categories-list">
+    <header class="section-header">
+        <h3 class="section-title">カテゴリ別 記事一覧</h3>
+        <p class="section-description">ボタン開閉式になっています。カテゴリをクリックすることでカテゴリ内の記事一覧が表示されます。</p>
+    </header><!--/section-header -->
+    <div class="section-content archive-content accordion">
+    <mt:TopLevelCategories>
+    <mt:If tag="CategoryCount">
+    <$mt:CategoryLabel setvar="catname"$>
+        <section class="accordion-group">
+            <header class="accordion-heading section-header">
+                <h4 class="section-title"><a href="#ac<$mt:CategoryBasename$>" class="accordion-toggle" data-toggle="collapse"><$mt:CategoryLabel$></a></h4>
+            </header><!--/accordion-heading -->
+            <div id="ac<$mt:CategoryBasename$>"class="section-content accordion-body collapse">
+                <div class="accordion-inner">
+                <mt:Entries category="$catname">
+                <section>
+                    <header class="section-header">
+                        <h5 class="section-title"><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a></h5>
+                    </header><!--/section-header -->
+                    <div class="section-content">
+                        <p class="entry-excerpt"><$mt:EntryExcerpt$></p>
+                    </div><!--/section-content -->
+                </section><!--/section-->
+                </mt:Entries>
+                </div><!--/accordion-inner -->
+            </div><!--/accordion-body -->
+        </section><!--/accordion-group -->
+    </mt:setvarblock>
+    </mt:If>
+    </mt:TopLevelCategories>
+    </div> <!-- /archive-content -->
+</section><!--/span5 categories-list -->
+</mt:IfArchiveTypeEnabled>

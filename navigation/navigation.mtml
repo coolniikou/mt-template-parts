@@ -1,0 +1,23 @@
+<nav role="navigation">
+    <ul class="nav nav-pills">
+    <mt:BlogParentWebsite>
+        <li class="first"><a href="<$mt:Link template="メインページ"$>">ホーム</a></li>
+        <li class="active"><a href="<$mt:WebsiteURL$>blogs/">ブログ</a></li>
+    </mt:BlogParentWebsite>
+    
+    <mt:Pages tag="@topnav" include_blogs="siblings" include_with_website="1">
+    <mt:SetVarBlock name="this_page_id"><$mt:PageID$></mt:SetVarBlock>
+        <li class="<mt:If name="page_id" eq="$this_page_id"> active</mt:If>"><a href="<$mt:PagePermalink$>"><$mt:PageTitle$></a></li>
+    </mt:Pages>
+    
+    <mt:Pages tags="@about" limit="1" include_blogs="siblings" include_with_website="1">
+    <mt:SetVarBlock name="this_page_id"><$mt:PageID$></mt:SetVarBlock>
+        <li class="<mt:If name="page_id" eq="$this_page_id"> active</mt:If>"><a href="<$mt:PagePermalink$>"><$mt:PageTitle$></a></li>
+    </mt:Pages>
+    
+    <mt:Pages tags="@contact" limit="1" include_blogs="siblings" include_with_website="1">
+    <mt:SetVarBlock name="this_page_id"><$mt:PageID$></mt:SetVarBlock>
+        <li class="last<mt:If name="page_id" eq="$this_page_id"> active</mt:If>"><a href="<$mt:PagePermalink$>"><$mt:PageTitle$></a></li>
+    </mt:Pages>
+    </ul>
+</nav>

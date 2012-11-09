@@ -1,0 +1,83 @@
+<article id="entry-<$mt:EntryID$>" class="entry">
+    <header class="entry-header">
+        <h3 class="entry-title"><$mt:EntryTitle$></h3>
+        <p class="entry-meta">
+        <mt:Unless name="hide_counts" eq="1">
+        <mt:IfCommentsActive><span class="separator"></span> <a href="<$mt:EntryPermalink$>#comments"><$mt:EntryCommentCount singular="コメント(1)" plural="コメント(#)"$></a></mt:IfCommentsActive>
+        <mt:IfPingsActive><span class="separator"> | </span> <a href="<$mt:EntryPermalink$>#trackbacks"><$mt:EntryTrackbackCount singular="トラックバック(1)" plural="トラックバック(#)"$></a></mt:IfPingsActive>
+        </mt:Unless>
+        </p>
+    </header><!--/entry-header -->
+    <div class="entry-content">
+        <p class="entry-excerpt"><$mt:EntryExcerpt$></p> <!-- /entry-excerpt --> 
+    <mt:If tag="EntryBody">
+        <div class="entry-body">
+            <$mt:EntryBody$>
+        </div> <!-- /entry-body -->
+    </mt:If>
+    <mt:If tag="EntryMore" convert_breaks="0">
+        <div class="entry-more">
+            <$mt:EntryMore$>
+        </div> <!-- /entrymore -->
+    </mt:If>
+        <div class="entry-related">
+        <mt:If tag="EntryCategory">
+            <aside id="related-categories" class="section row">
+                <header class="section-header span2">
+                    <h4 class="section-title">関連記事</h4>
+                    <p>（同カテゴリ）</p>
+                </header> <!-- /section-header -->
+                <div class="section-content span6">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><mt:EntryCategories glue='</li><li>'><a href="#<$mt:CategoryBasename$>" data-toggle="tab"><$mt:CategoryLabel$></a></mt:EntryCategories></li>
+                    </ul> <!-- /nav-tabs -->
+                    <div class="tab-content">
+                    <mt:EntryCategories>
+                    <mt:SetVarBlock name="catname"><mt:CategoryLabel></mt:SetVarBlock>
+                    　<mt:SetVarBlock name="entry-title"><mt:EntryTitle></mt:SetVarBlock>
+                        <div id="<$mt:CategoryBasename$>" class="tab-pane <mt:if name="__first__">active</mt:if>">
+                    <mt:Entries category="$catname" lastn="5">
+                    <mt:SetVarBlock name="current"><mt:EntryTitle></mt:SetVarBlock>
+                        <mt:EntriesHeader><ul class="unstyled entries"></mt:EntriesHeader>
+                    <mt:If name="entry-title" ne="$current">
+                                <li class="entry-item"><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a></li>
+                    </mt:If>
+                        <mt:EntriesFooter></ul></mt:EntriesFooter>
+                    </mt:Entries>
+                        </div> <!-- /tab-pane -->
+                    </mt:EntryCategories>
+                    </div> <!-- /tab-content -->
+                </div> <!-- /section-content -->
+            </aside> <!-- /entry-related-categories -->
+        </mt:If>
+        <mt:EntryIfTagged>
+            <aside id="related-tags" class="section row">
+                <header class="section-header span2">
+                    <h4 class="section-title">関連記事</h4>
+                    <p>（タグ）</p>
+                </header> <!-- /section-header -->
+                <div class="section-content span6">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><mt:EntryTags glue='</li><li>'><a href="#<$mt:TagName$>"><$mt:TagName$></a></mt:EntryTags>
+                    </li>
+                    </ul> <!-- /nav-tabs -->
+                    <div class="tab-content section-content">
+                    </div> <!-- /tab-conent -->
+                </div> <!-- /section-content -->
+            </aside> <!-- /entry-related-Tags -->
+        </mt:EntryIfTagged>
+        </div> <!-- /entry-related -->
+    </div> <!-- /entry-content -->
+    <footer class="entry-footer">
+        <p class="entry-meta">
+            <span class="byline">
+            <mt:If tag="EntryAuthorDisplayName">
+                <span class="vcard author"><$mt:EntryAuthorLink show_hcard="1"$></span>
+                 ( <time class="published" datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate format="%x %X"$></time> )
+            <mt:Else>
+                <time class="published" datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate format="%x %X"$></time>
+            </mt:If>
+            </span>
+        </p><!--/entry-meta -->
+    </footer> <!-- /entry-footer -->
+</article> <!-- /article entry-<$mt:EntryID$>-->

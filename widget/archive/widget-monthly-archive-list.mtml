@@ -1,0 +1,17 @@
+<mt:IfArchiveTypeEnabled archive_type="Monthly">
+    <mt:ArchiveList archive_type="Monthly">
+        <mt:ArchiveListHeader>
+<aside class="widget-archive-monthly widget-archive widget">
+    <h3 class="widget-title visualhidden"><$mt:ArchiveTypeLabel$> <a href="<$mt:Link template="archive_index"$>">アーカイブ</a></h3>
+    <a class="btn btn-widget" data-toggle="collapse" data-target=".widget-am">アーカイブ</a>
+    <div class="widget-content widget-am">
+        <ul class="unstyled">
+        </mt:ArchiveListHeader>
+            <li><a href="<$mt:ArchiveLink$>"><$mt:ArchiveTitle$> (<$mt:ArchiveCount$>)</a></li>
+        <mt:ArchiveListFooter>
+        </ul>
+    </div><!--/ widget-content widget-am-->
+</aside><!--/ widget-archive-monthly widget-archive widget-->
+        </mt:ArchiveListFooter>
+    </mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>

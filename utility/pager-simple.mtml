@@ -1,0 +1,60 @@
+<nav class="content-pager <mt:var name="responsive_class">" role="navigation">
+  <ul class="pager">
+  <mt:If name="entry_template">
+      <mt:EntryPrevious>
+      <li><a rel="tooltip" title="<$mt:EntryTitle revove_html="1"$>" href="<$mt:EntryPermalink$>">&laquo; 前記事</a></li>
+      </mt:EntryPrevious>
+      <li><a rel="tooltip" title="<$mt:BlogName$>" href="<$mt:Link template="main_index"$>">HOME</a></li>
+      <li><a rel="tooltip" title="アーカイブ" href="<$mt:Link template="archive_index"$>">アーカイブ</a></li>
+      <mt:EntryNext>
+      <li><a rel="tooltip" title="<$mt:EntryTitle remove_html="1"$>" href="<$mt:EntryPermalink$>">次記事 &raquo;</a></li>
+      </mt:EntryNext>
+  </mt:If>
+  <mt:If name="category_archive">
+      <mt:If name="datebased_archive">
+      <mt:ArchivePrevious>
+      <li><a rel="tooltip" title="<$mt:ArchiveTitle$>" href="<$mt:ArchiveLink$>">&laquo; Prev</a></li>
+      </mt:ArchivePrevious>
+      <li><a rel="tooltip" title="<$mt:BlogName$>" href="<$mt:Link template="main_index"$>">HOME</a></li>
+      <li><a rel="tooltip" title="アーカイブ" href="<$mt:Link template="archive_index"$>">アーカイブ</a></li>
+      <mt:ArchiveNext>
+      <li><a rel="tooltip" title="<$mt:ArchiveTitle$>" href="<$mt:ArchiveLink$>">Next &raquo;</a></li>
+      </mt:ArchiveNext>
+      <mt:Else>
+      <mt:CategoryPrevious>
+      <li><a rel="tooltip" title="<$mt:CategoryLabel$>" href="<$mt:CategoryArchiveLink$>">&laquo; <$mt:CategoryLabel$></a></li>
+      </mt:CategoryPrevious>
+      <li><a rel="tooltip" title="<$mt:BlogName$>" href="<$mt:Link template="main_index"$>"><$mt:BlogName$></a></li>
+      <li><a rel="tooltip" title="アーカイブ" href="<$mt:Link template="archive_index"$>">アーカイブ</a></li>
+      <mt:CategoryNext>
+      <li><a rel="tooltip" title="<$mt:CategoryLabel$>" href="<$mt:CategoryArchiveLink$>"><$mt:CategoryLabel$> &raquo;</a></li>
+      </mt:CategoryNext>
+      </mt:If>
+  </mt:If>
+  <mt:If name="author_archive">
+      <mt:If name="datebased_archive">
+      <mt:ArchivePrevious>
+      <li><a rel="tooltip" title="<$mt:ArchiveTitle$>" href="<$mt:ArchiveLink$>">&laquo; Prev</a></li>
+      </mt:ArchivePrevious>
+      <li><a rel="tooltip" title="<$mt:BlogName$>" href="<$mt:Link template="main_index"$>">HOME</a></li>
+      <li><a rel="tooltip" title="アーカイブ" href="<$mt:Link template="archive_index"$>">アーカイブ</a></li>
+      <mt:ArchiveNext>
+      <li><a rel="tooltip" title="<$mt:ArchiveTitle$>" href="<$mt:ArchiveLink$>">Next &raquo;</a></li>
+      </mt:ArchiveNext>
+      </mt:If>
+  </mt:If>
+  <mt:If name="datebased_only_archive">
+      <mt:ArchivePrevious>
+      <li><a rel="tooltip" title="<$mt:ArchiveTitle$>" href="<$mt:ArchiveLink$>">&laquo; Prev</a></li>
+      </mt:ArchivePrevious>
+      <li><a rel="tooltip" title="<$mt:BlogName$>" href="<$mt:Link template="main_index"$>">HOME</a></li>
+      <li><a rel="tooltip" title="アーカイブ" href="<$mt:Link template="archive_index"$>">アーカイブ</a></li>
+      <mt:ArchiveNext>
+      <li><a rel="tooltip" title="<$mt:ArchiveTitle$>" href="<$mt:ArchiveLink$>">Next &raquo;</a></li>
+      </mt:ArchiveNext>
+  </mt:If>
+  <mt:If name="archive_index">
+      <li><a rel="tooltip" title="<$mt:BlogName$>" href="<$mt:Link template="main_index"$>">HOME</a></li>
+  </mt:If>
+  </ul> <!--/pager -->
+</nav> <!--/content-pager -->

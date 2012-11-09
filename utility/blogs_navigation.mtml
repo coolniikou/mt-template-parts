@@ -1,0 +1,25 @@
+<nav id="global-nav">
+    <ul class="nav navbar-navigation pull-right">
+        <li>
+<mt:BlogParentWebsite>
+            <a class="brand" href="<$mt:WebsiteURL$>"><$mt:WebsiteName encode_html="1"$></a>
+</mt:BlogParentWebsite>
+        </li>
+        <mt:Blogs  blog_ids="siblings">
+        <mt:SetVarBlock name="this_blog_id"><$mt:BlogID$></mt:SetVarBlock>
+        <li class="<mt:If name="blog_id" eq="$this_blog_id">active</mt:If>"><a href="<$mt:BlogURL$>"><$mt:BlogName Encode_Html="1"$></a></li>
+        </mt:Blogs>
+        <mt:Pages tags="@about" limit="1" include_bogs="siblings" include_with_website="1">
+        <mt:SetVarBlock name="this_page_id"><$mt:PageID$></mt:SetVarBlock>
+        <li class="<mt:If name="page_id" eq="$this_page_id"> active</mt:If>"><a href="<$mt:PagePermalink$>"><i class="icon-user"></i><$mt:PageTitle$></a></li>
+        </mt:Pages>
+        <mt:Pages tags="@sitemap" limit="1" include_with_website="1">
+        <mt:SetVarBlock name="this_page_id"><$mt:PageID$></mt:SetVarBlock>
+        <li class="<mt:If name="page_id" eq="$this_page_id"> active</mt:If>"><a href="<$mt:PagePermalink$>"><i class="icon-list"></i><$mt:PageTitle$></a></li>
+        </mt:Pages>
+        <mt:Pages tags="@contact" limit="1" include_with_website="1">
+        <mt:SetVarBlock name="this_page_id"><$mt:PageID$></mt:SetVarBlock>
+        <li class="last<mt:If name="page_id" eq="$this_page_id"> active</mt:If>"><a href="<$mt:PagePermalink$>"><i class="icon-envelope"></i><$mt:PageTitle$></a></li>
+        </mt:Pages>
+    </ul> <!-- /navbar-navigation -->
+</nav><!--/global-nav -->

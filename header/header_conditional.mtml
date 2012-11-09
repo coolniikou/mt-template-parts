@@ -1,0 +1,24 @@
+<mt:BlogParentWebsite><mt:WebsiteID setvar="website_id"></mt:BlogParentWebsite>
+<mt:SetVarBlock name="blog_id"><$mt:BlogID></mt:SetVarBlock>
+<mt:SetVarBlock name="blog_name"><$mt:BlogName></mt:SetVarBlock>
+<mt:Unless name="main_index">
+	<mt:if name="entry_archive">
+		    <mt:SetVarBlock name="entry_id"><$mt:EntryID></mt:SetVarBlock>
+		    <mt:SetVarBlock name="entry_title"><$mt:EntryTitle></mt:SetVarBlock>
+		<mt:ElseIf name="page_archive">
+		    <mt:SetVarBlock name="page_id"><$mt:PageID></mt:SetVarBlock>
+		    <mt:SetVarBlock name="page_title"><$mt:PageTitle></mt:SetVarBlock>
+		<mt:Else>
+			<mt:Unless name="datebased_archive">
+				<mt:IfArchiveType>
+					<mt:SetVarBlock name="archive_title"><$mt:ArchiveTitle></mt:SetVarBlock>
+				</mt:IfArchiveType>
+				<mt:IfArchiveType archive_type="Category">
+					<mt:SetVarBlock name="category_id"><$mt:CategoryID></mt:SetVarBlock>
+				</mt:IfArchiveType>
+				<mt:IfArchiveType archive_type="Author">
+					<mt:SetVarBlock name="author_id"><$mt:AuthorID></mt:SetVarBlock>
+				</mt:IfArchiveType>
+			</mt:Unless>
+	</mt:if>
+</mt:Unless>

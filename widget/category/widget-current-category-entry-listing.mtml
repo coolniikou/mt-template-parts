@@ -1,0 +1,26 @@
+<mt:Unless name="main_index">
+    <mt:If name="entry_archive">
+　　　<mt:SetVarBlock name="catname"><mt:EntryCategory></mt:SetVarBlock>
+　　　<mt:SetVarBlock name="current"><mt:EntryTitle></mt:SetVarBlock>
+　　　　<mt:Entries category="$catname">
+          <mt:SetVarBlock name="title"><mt:EntryTitle></mt:SetVarBlock>
+        <mt:EntriesHeader>
+<aside class="widget-current-category-entries widget">
+    <h3 class="widget-title visualhidden">カテゴリ内エントリリスト</h3>
+    <a class="btn btn-widget" data-toggle="collapse" data-target=".cce">カテゴリ内エントリリスト</a>
+    <div class="widget-content cce">
+        <ul class="entries unstyled">
+        </mt:EntriesHeader>
+        <mt:If name="title" ne="$current">
+          <li class="entry-item"><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a></li>
+        <mt:Else>
+          <li class="entry-item active"><$mt:EntryTitle$></li>
+        </mt:If>
+        <mt:EntriesFooter>
+        </ul><!--/ entries-->
+    </div><!--/ widget-content cce-->
+</aside><!--/ widget-current-category-entries widget-->
+        </mt:EntriesFooter>
+　　　　</mt:Entries>
+    </mt:If>
+</mt:Unless>

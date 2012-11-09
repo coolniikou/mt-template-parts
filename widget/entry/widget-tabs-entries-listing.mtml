@@ -1,0 +1,52 @@
+<aside class="widget-tabs-entries widget-archives widget">
+    <h3 class="widget-title visualhidden">タブ形式記事</h3>
+    <a class="btn btn-widget" data-toggle="collapse" data-target=".widget-re">タブ形式記事</a>
+    <div class="widget-content">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#recent" data-toggle="tab">最新記事一覧</a></li>
+            <li><a href="#category" data-toggle="tab">カテゴリ内記事一覧</a></li>
+        </ul> <!--/ nav-tabs-->
+        <div class="tab-content">
+            <div id="recent" class="tab-pane active">
+        <mt:If tag="BlogEntryCount">
+            <mt:Entries lastn="10">
+                <mt:EntriesHeader>
+                <ul class="unstyled">
+                </mt:EntriesHeader>
+                    <li><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a></li>
+                <mt:EntriesFooter>
+                </ul>
+                </mt:EntriesFooter>
+            </mt:Entries>
+        </mt:If>
+            </div> <!--/ recent-->
+            <div id="category" class="tab-pane">
+<mt:IfArchiveTypeEnabled archive_type="Category">
+<mt:if tag="BlogCategoryCount">
+    <mt:TopLevelCategories>
+        <mt:SubCatIsFirst>
+                <ul class="unstyled">
+        </mt:SubCatIsFirst>
+        <mt:If tag="CategoryCount">
+            <$mt:CategoryLabel setvar="catname"$>
+                    <li><a href="<$mt:CategoryArchiveLink$>"<mt:If tag="CategoryDescription"> title="<$mt:CategoryDescription remove_html="1" encode_html="1"$>"</mt:If>><$mt:CategoryLabel$> (<$mt:CategoryCount$>)</a>
+            <mt:Entries category="$catname">
+            <mt:EntriesHeader><ul class="unstyled"></mt:EntriesHeader>
+                            <li><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a></li>
+            <mt:EntriesFooter></ul></mt:EntriesFooter>
+            </mt:Entries>
+        <mt:Else>
+            <li><$mt:CategoryLabel$>
+        </mt:If>
+        <$mt:SubCatsRecurse$>
+            </li>
+        <mt:SubCatIsLast>
+        </ul>
+        </mt:SubCatIsLast>
+    </mt:TopLevelCategories>
+</mt:if>
+</mt:IfArchiveTypeEnabled>
+            </div><!--/ category-->
+        </div>
+    </div> <!--/ widget-content-->
+</aside><!--/ widget-tabs-entries widget-archives widget-->

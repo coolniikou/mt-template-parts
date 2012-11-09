@@ -1,0 +1,15 @@
+<aside class="widget-search widget">
+	<h3 class="widget-title visualhidden">検索 TypeAhead </h3>
+    <div class="widget-content">
+        <form method="get" action="<$mt:CGIPath$>cool2ikou/mt52/<$mt:SearchScript$>" class="form-search" role="search">
+            <input type="text" id="search" class="span2" name="search" value="<$mt:SearchString$>" />
+<mt:If name="search_results">
+            <input type="hidden" name="IncludeBlogs" value="<$mt:SearchIncludeBlogs$>" />
+<mt:Else>
+            <input type="hidden" name="IncludeBlogs" value="<$mt:BlogID$>" />
+</mt:If>
+            <input type="hidden" name="limit" value="<$mt:SearchMaxResults$>" />
+            <button type="submit" accesskey="4" class="btn">検索</button>
+        </form>
+    </div><!--/ widget-content-->
+</aside><!--/ widget-search widget-->

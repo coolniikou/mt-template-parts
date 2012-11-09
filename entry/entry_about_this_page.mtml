@@ -1,0 +1,16 @@
+<footer class="entry-footer">
+    <h4 class="widget-header">About this entry</h4>
+    <div class="widget-content row-fluid">
+        <p class="span2"><$mt:EntryAuthorUserpic$></p>
+        <div class="entry-meta span9">
+            <p class="entry-meta">このページは、<span class="entry-author"><$mt:EntryAuthorLink show_hcard="1"$></span> が <span class="entry-date"><time class="published" datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate format="%x %X"$></time></span> に作成した記事です。</p>
+            <$mt:AuthorName setvar="authorname"$>
+            <p><$mt:EntryAuthorLink$>の最近記事</p>
+            <ul class="unstyled">
+            <mt:Entries author="$authorname" lastn="5">
+                <li><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a></li>
+            </mt:Entries>
+            </ul>
+        </div>
+    </div>
+</footer> <!-- /entry-footer -->

@@ -1,0 +1,17 @@
+<mt:If tag="BlogEntryCount">
+    <mt:Entries lastn="10">
+        <mt:EntriesHeader>
+<aside class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-title visualhidden">最近のブログ記事</h3>
+    <a class="btn btn-widget" data-toggle="collapse" data-target=".widget-re">最近のブログ記事</a>
+    <div class="widget-content widget-re">
+        <ul class="unstyled">
+        </mt:EntriesHeader>
+            <li><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a></li>
+        <mt:EntriesFooter>
+        </ul>
+    </div><!--/ widget-content widget-re-->
+</aside><!--/ widget-recent-entries widget-archives widget-->
+        </mt:EntriesFooter>
+    </mt:Entries>
+</mt:If>

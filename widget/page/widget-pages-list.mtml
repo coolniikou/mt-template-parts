@@ -1,0 +1,28 @@
+<mt:IfArchiveTypeEnabled archive_type="Page">
+<mt:If tag="BlogPageCount">
+<aside class="widget-pages widget">
+    <h3 class="widget-title visualhidden">ウェブページ</h3>
+    <div class="widget-content">
+        <ul class="unstyled">
+    <mt:Pages no_folder="1" sort_by="title" sort_order="ascend">
+            <li class="page page-<$mt:PageID$>"><a href="<$mt:PagePermalink$>"><$mt:PageTitle$></a></li>
+    </mt:Pages>
+    <mt:TopLevelFolders>
+            <li class="folder folder-<$mt:FolderID$>"><strong><$mt:FolderLabel$></strong>
+        <mt:Pages sort_by="title" sort_order="ascend">
+            <mt:PagesHeader>
+                <ul class="unstyled">
+            </mt:PagesHeader>
+                    <li class="page page-<$mt:PageID$>"><a href="<$mt:PagePermalink$>"><$mt:PageTitle$></a></li>
+            <mt:PagesFooter>
+                </ul>
+            </mt:PagesFooter>
+        </mt:Pages>
+            </li>
+        <$mt:SubFolderRecurse$>
+    </mt:TopLevelFolders>
+        </ul>
+    </div><!--/ widget-content-->
+</aside><!--/ widget-pages widget-->
+</mt:If>
+</mt:IfArchiveTypeEnabled>

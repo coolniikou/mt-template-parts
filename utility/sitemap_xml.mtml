@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<mt:Blogs include_blogs="children" include_with_website="1">
+<url>
+<loc><$mt:BlogURL encode_xml="1"$></loc>
+<lastmod><$mt:Date format="%Y-%m-%dT%H:%M:%S"$><$mt:BlogTimezone$></lastmod>
+<changefreq>daily</changefreq>
+</url>
+
+<mt:IfArchiveTypeEnabled archive_type="Individual"><mt:Entries lastn="9999"><url>
+<loc><$mt:EntryPermalink encode_xml="1"$></loc>
+<lastmod><$mt:EntryModifiedDate format="%Y-%m-%dT%H:%M:%S"$><$mt:BlogTimezone$></lastmod>
+<priority>1.0</priority>
+</url></mt:Entries></mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Page"><mt:Pages lastn="9999"><url>
+<loc><$mt:PagePermalink encode_xml="1"$></loc>
+<lastmod><$mt:PageModifiedDate format="%Y-%m-%dT%H:%M:%S"$><$mt:BlogTimezone$></lastmod>
+<priority>1.0</priority>
+</url></mt:Pages></mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Yearly">
+<mt:ArchiveList archive_type="Yearly"><$mt:Var name="CREATEURL"$></mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Monthly">
+<mt:ArchiveList archive_type="Monthly"><$mt:Var name="CREATEURL"$></mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Weekly">
+<mt:ArchiveList archive_type="Weekly"><$mt:Var name="CREATEURL"$></mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Daily">
+<mt:ArchiveList archive_type="Daily"><$mt:Var name="CREATEURL"$></mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Author">
+<mt:ArchiveList archive_type="Author"><$mt:Var name="CREATEURL"$></mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Author-Daily">
+<mt:ArchiveList archive_type="Author-Daily"><$mt:Var name="CREATEURL"$></mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Author-Weekly">
+<mt:ArchiveList archive_type="Author-Weekly"><$mt:Var name="CREATEURL"$>
+
+</mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Author-Monthly">
+<mt:ArchiveList archive_type="Author-Monthly"><$mt:Var name="CREATEURL"$></mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Author-Yearly">
+<mt:ArchiveList archive_type="Author-Yearly"><$mt:Var name="CREATEURL"$></mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Category">
+<mt:ArchiveList archive_type="Category"><$mt:Var name="CREATEURL"$></mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Category-Daily">
+<mt:ArchiveList archive_type="Category-Daily"><$mt:Var name="CREATEURL"$></mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Category-Weekly">
+<mt:ArchiveList archive_type="Category-Weekly"><$mt:Var name="CREATEURL"$></mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Category-Monthly">
+<mt:ArchiveList archive_type="Category-Monthly"><$mt:Var name="CREATEURL"$></mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>
+
+<mt:IfArchiveTypeEnabled archive_type="Category-Yearly">
+<mt:ArchiveList archive_type="Category-Yearly"><$mt:Var name="CREATEURL"$></mt:ArchiveList>
+</mt:IfArchiveTypeEnabled>
+
+</mt:Blogs>
+</urlset>

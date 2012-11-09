@@ -1,0 +1,17 @@
+<mt:If tag="AssetCount">
+    <mt:Assets type="image" lastn="10">
+        <mt:AssetsHeader>
+<aside class="widget-recent-assets widget">
+    <h3 class="widget-title visualhidden">アイテム</h3>
+    <a class="btn btn-widget" data-toggle="collapse" data-target=".widget-ra">アイテム</a>
+    <div class="widget-content widget-ra">
+        <ul class="unstyled">
+        </mt:AssetsHeader>
+        <li class="item"><a class="asset-image" href="<$mt:AssetURL$>"><img alt="<$mt:AssetLabel$>" src="<$mt:AssetThumbnailURL height="70" square="1"$>" width="70" height="70" title="<$mt:AssetLabel$>" class="asset-img-thumb" /></a></li>
+        <mt:AssetsFooter>
+        </ul>
+    </div> <!-- /widget-content -->
+</aside> <!-- /widget-recent-assets -->
+        </mt:AssetsFooter>
+    </mt:Assets>
+</mt:If>

@@ -1,0 +1,13 @@
+<p class="entry-meta">
+    <span class="byline">
+<mt:If tag="EntryAuthorDisplayName">
+        <span class="vcard author"><$mt:EntryAuthorLink show_hcard="1"$></span> (<time class="published" datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate format="%x %X"$></time>)
+<mt:Else>
+        <time class="published" datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate format="%x %X"$></time>
+</mt:If>
+    </span>
+<mt:Unless name="hide_counts" eq="1">
+    <mt:IfCommentsActive><span class="separator">|</span> <a href="<$mt:EntryPermalink$>#comments"><$mt:EntryCommentCount singular="コメント(1)" plural="コメント(#)"$></a></mt:IfCommentsActive>
+    <mt:IfPingsActive><span class="separator">|</span> <a href="<$mt:EntryPermalink$>#trackbacks"><$mt:EntryTrackbackCount singular="トラックバック(1)" plural="トラックバック(#)"$></a></mt:IfPingsActive>
+</mt:Unless>
+</p>

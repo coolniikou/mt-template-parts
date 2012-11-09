@@ -1,0 +1,17 @@
+<mt:IfArchiveTypeEnabled archive_type="Author-Monthly">
+    <mt:ArchiveList archive_type="Author-Monthly">
+        <mt:ArchiveListHeader>
+<aside class="widget-archive-current-author-monthly widget">
+    <h3 class="widget-title visualhidden"><$mt:AuthorDisplayName encode_html="1"$> : 月別アーカイブ</h3>
+    <a class="btn btn-widget" data-toggle="collapse" data-target=".widget-acam"><$mt:AuthorDisplayName encode_html="1"$>: 月別アーカイブ</a>
+    <div class="widget-content widget-acam">
+        <ul class="unstyled">
+        </mt:ArchiveListHeader>
+            <li><a href="<$mt:ArchiveLink$>"><$mt:ArchiveTitle$> (<$mt:ArchiveCount$>)</a></li>
+        <mt:ArchiveListFooter>
+        </ul><!--/ unstyled-->
+        </mt:ArchiveListFooter>
+    </mt:ArchiveList>
+    </div><!--/ widget-content widget-acam-->
+</aside><!--/ widget-archive-current-author-monthly widget-->
+</mt:IfArchiveTypeEnabled>

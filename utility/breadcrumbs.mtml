@@ -1,0 +1,38 @@
+<ul class="nav nav-pills breadcrumbs">
+		<mt:BlogParentWebsite>
+		<li><a href="<$mt:WebsiteURL$>"><$mt:WebsiteName encode_html="$"$></a></li>
+        <li>&gt;</li>
+		</mt:BlogParentWebsite>
+		<li><a href="<$mt:BlogURL$>"<mt:if name="main_index"> class="active"</mt:if>><$mt:Blogname Encode_Html="$"$></a></li>
+		<mt:Unless name="main_index">
+		<li>&gt;</li>
+			<mt:if name="entry_archive">
+                <mt:If tag="EntryCategory">
+                    <mt:EntryCategories glue="<li>&gt;</li>">
+        <li><a href="<$mt:CategoryArchiveLink$>" rel="tag"><$mt:CategoryLabel$></a></li>
+                    </mt:EntryCategories>
+		<li>&gt;</li>
+                </mt:If>
+		<li><a href="<$mt:EntryPermalink$>" class="active"><$mt:EntryTitle$></a></li>
+				<mt:ElseIf name="page_archive">
+                    <mt:If tag="PageFolder">
+                        <mt:PageFolder>
+        <li><a href="<$mt:CategoryArchiveLink$>" rel="tag"><$mt:FolderLabel$></a></li>
+                        </mt:PageFolder>
+		<li>&gt;</li>
+                    </mt:If>
+		<li><a href="<$mt:PagePermalink$>" class="active"><$mt:PageTitle$></a></li>
+				<mt:Else>
+					<mt:Unless name="datebased_archive">
+						<mt:IfArchiveType archive_type="Category">
+		<li><a href="<$mt:ArchiveLink$>" class="active"><em><$mt:ArchiveTitle$></em></a></li>
+						</mt:IfArchiveType>
+						<mt:IfArchiveType archive_type="Author">
+		<li><a href="<$mt:ArchiveLink$>" class="active"><em><$mt:ArchiveTitle$></em></a></li>
+						</mt:IfArchiveType>
+					<mt:Else>
+		<li><a href="<$mt:ArchiveLink$>" class="active"><$mt:Var name="page_title"$></a></li>
+					</mt:Unless>
+			</mt:if>
+		</mt:Unless>
+</ul>

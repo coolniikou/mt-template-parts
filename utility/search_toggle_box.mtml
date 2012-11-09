@@ -1,0 +1,19 @@
+<a href="javascript:void(0);" id="search-toggle" data-target="#search-toggle-box"> 検索<b class="caret"></b></a>
+<div id="search-toggle-box">
+    <div class="container">
+        <aside class="widget-search widget pull-right">
+            <form method="get" action="<$mt:CGIPath$><$mt:SearchScript$>" class="form-search" role="search">
+                <div class="input-append">
+                    <input type="text" id="search" class="span4" name="search" data-provide="typeahead" data-items="7" data-source="<mt:Tags glue=","><mt:if name="__first__">[</mt:if>&quot;<$mt:TagName$>&quot;<mt:if name="__last__">]</mt:if></mt:Tags>" value="<$mt:SearchString$>" placeholder="検索する文字を入力してください。"  />
+    <mt:If name="search_results">
+                    <input type="hidden" name="IncludeBlogs" value="<$mt:SearchIncludeBlogs$>" />
+    <mt:Else>
+                    <input type="hidden" name="IncludeBlogs" value="<$mt:BlogID$>" />
+    </mt:If>
+                    <input type="hidden" name="limit" value="<$mt:SearchMaxResults$>" />
+                    <button type="submit" accesskey="4" class="btn">検索</button>
+                </div>
+            </form>
+        </aside><!--/widget-search widget-->
+    </div><!--/search_box container -->
+</div><!--/#search-toggle-box -->

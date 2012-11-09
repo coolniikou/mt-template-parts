@@ -1,0 +1,31 @@
+<mt:IfArchiveTypeEnabled archive_type="Category">
+<mt:if tag="BlogCategoryCount">
+<aside class="widget-archive-category widget">
+    <h3 class="widget-title visualhidden">カテゴリ</h3>
+    <a class="btn btn-widget" data-toggle="collapse" data-target=".arch-category">カテゴリ</a>
+    <div class="widget-content arch-category">
+    <mt:TopLevelCategories>
+        <mt:SubCatIsFirst>
+        <ul class="categories unstyled">
+        </mt:SubCatIsFirst>
+        <mt:If tag="CategoryCount">
+            <$mt:CategoryLabel setvar="catname"$>
+            <li class="category-item"><a href="<$mt:CategoryArchiveLink$>"<mt:If tag="CategoryDescription"> title="<$mt:CategoryDescription remove_html="1" encode_html="1"$>"</mt:If>><$mt:CategoryLabel$> (<$mt:CategoryCount$>)</a>
+            <mt:Entries category="$catname">
+            <mt:EntriesHeader><ul class="entries"></mt:EntriesHeader>
+            <li class="entry-item"><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a></li>
+            <mt:EntriesFooter></ul></mt:EntriesFooter>
+            </mt:Entries>
+        <mt:Else>
+            <li><$mt:CategoryLabel$>
+        </mt:If>
+        <$mt:SubCatsRecurse$>
+            </li>
+        <mt:SubCatIsLast>
+        </ul>
+        </mt:SubCatIsLast>
+    </mt:TopLevelCategories>
+    </div><!--/ widget-content arch-category-->
+</aside><!--/ widget-archive-category widget-->
+</mt:if>
+</mt:IfArchiveTypeEnabled>

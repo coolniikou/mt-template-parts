@@ -1,0 +1,30 @@
+<mt:If tag="EntryCategory">
+    <aside id="related-categories" class="section row-fluid">
+        <header class="section-header span3">
+            <h4 class="section-title">関連記事</h4>
+            <p>（同カテゴリ）</p>
+        </header> <!-- /section-header -->
+        <div class="section-content span9">
+            <ul class="nav nav-tabs">
+                <li class="active"><mt:EntryCategories glue='</li><li>'><a href="#<$mt:CategoryBasename$>" data-toggle="tab"><$mt:CategoryLabel$></a></mt:EntryCategories></li>
+            </ul> <!-- /nav-tabs -->
+            <div class="tab-content">
+            <mt:EntryCategories>
+            <mt:SetVarBlock name="catname"><mt:CategoryLabel></mt:SetVarBlock>
+            　<mt:SetVarBlock name="entry-title"><mt:EntryTitle></mt:SetVarBlock>
+                <div id="<$mt:CategoryBasename$>" class="tab-pane <mt:if name="__first__">active</mt:if>">
+            <mt:Entries category="$catname" lastn="5">
+            <mt:SetVarBlock name="current"><mt:EntryTitle></mt:SetVarBlock>
+                <mt:EntriesHeader><ul class="unstyled entries"></mt:EntriesHeader>
+            <mt:If name="entry-title" ne="$current">
+                        <li class="entry-item"><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a></li>
+            </mt:If>
+                <mt:EntriesFooter></ul></mt:EntriesFooter>
+            </mt:Entries>
+                </div> <!-- /tab-pane -->
+            </mt:EntryCategories>
+            </div> <!-- /tab-content -->
+        </div> <!-- /section-content -->
+    </aside> <!-- /entry-related-categories -->
+</mt:If>
+

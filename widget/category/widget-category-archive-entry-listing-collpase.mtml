@@ -1,0 +1,39 @@
+<mt:IfArchiveTypeEnabled archive_type="Category">
+<mt:if tag="BlogCategoryCount">
+<aside class="widget-archive-category widget">
+    <h3 class="widget-title visualhidden">カテゴリ</h3>
+    <div id="accrodionWidget" class="accordion widget-content">
+    <mt:TopLevelCategories>
+        <mt:SubCatIsFirst>
+        <div class="accordion-group">
+        </mt:SubCatIsFirst>
+            <mt:If tag="CategoryCount">
+            <$mt:CategoryLabel setvar="catname"$>
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collpase" data-parent="#accordionWidget" href="#collpase<$mt:GetVar name="catname">"<mt:If tag="CategoryDescription"> title="<$mt:CategoryDescription remove_html="1" encode_html="1"$>"</mt:If>><$mt:CategoryLabel$> (<$mt:CategoryCount$>)</a>
+            </div> <!--/accordion-heading-->
+            <div id="collpase<$mt:GetVar name="catname">" class="accordion-body collpase">
+                <div class="accordion-inner">
+                <mt:Entries category="$catname">
+                <mt:EntriesHeader><ul></mt:EntriesHeader>
+                    <li><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a></li>
+                <mt:EntriesFooter></ul></mt:EntriesFooter>
+                </mt:Entries>
+                </div> 
+            </div> <!-- /accordion-body -->
+            <mt:Else>
+                <div class="accordion-heading">
+                <$mt:CategoryLabel$>
+                </div> <!-- /accrodion-heading -->
+                <div class="accordiong-body"></div><!--/ accordiong-body-->
+            </mt:If>
+            <$mt:SubCatsRecurse$>
+            </div> <!-- /accordion-group -->
+        <mt:SubCatIsLast>
+        </div> <!-- /accordion-group  -->
+        </mt:SubCatIsLast>
+    </mt:TopLevelCategories>
+    </div> <!-- /widget-content -->
+</aside><!--/ widget-archive-category widget-->
+</mt:if>
+</mt:IfArchiveTypeEnabled>

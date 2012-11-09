@@ -1,0 +1,19 @@
+<mt:If tag="BlogCommentCount">
+    <mt:Comments lastn="10" sort_order="descend">
+        <mt:CommentsHeader>
+<aside class="widget-recent-comments widget">
+    <h3 class="widget-title visualhidden">最近のコメント</h3>
+    <a class="btn btn-widget" data-toggle="collapse" data-target=".widget-rc">最近のコメント</a>
+    <div class="widget-content widget-rc">
+        <ul class="unstyled">
+        </mt:CommentsHeader>
+            <li>
+                <a href="<$mt:CommentLink$>"><$mt:CommentAuthor$> から <mt:CommentEntry><$mt:EntryTitle$></mt:CommentEntry> に対するコメント</a>: <$mt:CommentBody remove_html="1" trim_to="10"$>
+            </li>
+        <mt:CommentsFooter>
+        </ul>
+    </div><!--/ widget-content-->
+</aside><!--/ widget-recent-comments widget-->
+        </mt:CommentsFooter>
+    </mt:Comments>
+</mt:If>

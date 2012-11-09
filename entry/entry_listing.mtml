@@ -1,0 +1,43 @@
+<mt:SetVarBlock name="page_title"><$mt:ArchiveTitle$>アーカイブ</mt:SetVarBlock>
+<mt:SetVarBlock name="title"><$mt:BlogName encode_html="1"$>: <$mt:Var name="page_title"$></mt:SetVarBlock>
+<mt:Unless name="datebased_archive"><$mt:Var name="limit" value="auto"$></mt:Unless>
+<mt:If name="datebased_archive">
+    <mt:SetVarBlock name="html_head">
+        <mt:ArchivePrevious><link rel="prev" href="<$mt:ArchiveLink$>" title="<$mt:ArchiveTitle encode_html="1"$>" /></mt:ArchivePrevious>
+        <mt:ArchiveNext><link rel="next" href="<$mt:ArchiveLink$>" title="<$mt:ArchiveTitle encode_html="1"$>" /></mt:ArchiveNext>
+    </mt:SetVarBlock>
+</mt:If>
+<$mt:Include module="html_header" body_class="entryListing"$>
+<mt:Unless name="blank" regex_replace="/^\s*\n/gm","">
+<mt:ignore>
+<mt:Unless name="blank" regex_replace="/\s{2,10000}|\n/gm","">
+</mt:ignore>
+<$mt:Include module="navbar_fixed_top"$>
+<header id="branding" role="banner">
+    <div class="container">
+        <$mt:Include module="page_header"$>
+    </div><!--/container -->
+</header><!--/#branding -->
+<div class="content">
+    <div class="container">
+        <div id="primary" class="row">
+            <div id="content-main" class="span9" role="main">
+                <$mt:Include module="content_entryListing"$>
+            </div><!--/#content-main -->
+            <div id="content-side" class="span3" role="complementary">
+                <$mt:WidgetSet name="single-aside"$>
+            </div><!--/#content-aside -->
+        </div><!--/#primary -->
+    </div><!--/container -->
+</div><!--/content -->
+<footer id="page-footer">
+    <div class="container">
+        <$mt:Include module="page_footer"$>
+    </div>
+</footer><!--/page-footer -->
+<mt:ignore>
+</mt:Unless>
+</mt:ignore>
+</mt:Unless>
+<$mt:Include module="footer_load_js"$>
+<$mt:Include module="footer_load_jquery"$>

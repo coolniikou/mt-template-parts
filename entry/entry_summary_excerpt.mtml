@@ -1,0 +1,34 @@
+<article id="entry-<$mt:EntryID$>" class="entry">
+    <header class="entry-header">
+        <h3 class="entry-title"><a href="<$mt:EntryPermalink$>" rel="bookmark"><$mt:EntryTitle$></a></h3>
+    </header> <!-- /entry-heder -->
+    <div class="entry-content">
+        <p class="entry-excerpt"><$mt:EntryExcerpt$></p> <!-- /entry-excerpt -->
+    </div> <!-- /entry-content -->
+    <footer class="entry-footer">
+<mt:IfTagSearch>
+    <mt:EntryIfTagged>
+        <p class="entry-tags">
+            <span class="entry-tag-header">タグ :</span>
+            <mt:EntryTags glue='<span class="delimiter">,</span>'>
+            <span class="entry-tag"><a href="javascript:void(0)" onclick="location.href='<$mt:TagSearchLink encode_js="1"$>';return false;" rel="tag"><$mt:TagName$></a></span>
+            </mt:EntryTags>
+        </p> <!--/entry-tags -->
+    </mt:EntryIfTagged>
+</mt:IfTagSearch>
+        <p class="entry-meta">
+            <span class="byline">
+            <mt:If tag="EntryAuthorDisplayName">
+                <span class="vcard author"><$mt:EntryAuthorLink show_hcard="1"$></span>
+                 ( <time class="published" datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate format="%x %X"$></time> )
+            <mt:Else>
+                <time class="published" datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate format="%x %X"$></time>
+            </mt:If>
+            </span>
+            <mt:Unless name="hide_counts" eq="1">
+            <mt:IfCommentsActive><span class="separator"> | </span> <a href="<$mt:EntryPermalink$>#comments"><$mt:EntryCommentCount singular="コメント(1)" plural="コメント(#)"$></a></mt:IfCommentsActive>
+            <mt:IfPingsActive><span class="separator"> | </span> <a href="<$mt:EntryPermalink$>#trackbacks"><$mt:EntryTrackbackCount singular="トラックバック(1)" plural="トラックバック(#)"$></a></mt:IfPingsActive>
+            </mt:Unless>
+        </p> <!--/entry-meta -->
+    </footer> <!-- /entry-footer -->
+</article> <!-- /entry entry-<$mt:EntryID$>-->

@@ -1,0 +1,9 @@
+<mt:Ignore>
+    main_indexのテンプレートだけに表示されるように設定されているウィジェットのセットです。詳細: http://www.movabletype.org/documentation/designer/widget-sets.html
+</mt:Ignore>
+<mt:If name="main_index">
+    <$mt:Include widget="widget-recent-comments"$>
+    <$mt:Include widget="widget-recent-entries"$>
+    <$mt:Include widget="widget-recent-asset"$>
+    <$mt:Include widget="widget-tag-cloud"$>
+</mt:If>
